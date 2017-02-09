@@ -37,7 +37,7 @@
 
  }]);
 
- ecsapp.controller('homectrol', ['$scope','$state',function($scope,$state) {
+ ecsapp.controller('homectrol', ['$scope', '$state', function($scope, $state) {
 
      //开合产品与服务
      $scope.isProductOpen = false;
@@ -76,37 +76,68 @@
 
      $scope.navScene = "main";
 
-    //中间菜单是否选中
-    $scope.checkActive=function(){
-    	
+     $scope.product = {
+         item2: false,
+         item1: true
+     };
+
+     $scope.showproduct = function(item) {
+
+         $scope.product = {
+             item2: false,
+             item1: false
+         };
+
+         if (item == 1) {
+           $scope.product.item1=true;
+         }
+
+          if (item == 2) {
+           $scope.product.item2=true;
+         }
+
+     }
+
+
+
+
+
+     $scope.searchClickHandler = function(evnte) {
+
+         alert("消息内管理-测试");
+     }
+
+     //中间菜单是否选中
+     $scope.checkActive = function() {
+
          var Activeurl = $state.current.url;
-         var munes= {
-          	disk:false,
-          	Examples:false,
-          	Overview:false
-          };
+         var munes = {
+             disk: false,
+             Examples: false,
+             Overview: false
+         };
 
-          if(Activeurl == "/Overview"){
-            munes.Overview=true;
-          }
+         if (Activeurl == "/Overview") {
+             munes.Overview = true;
+         }
 
-          if(Activeurl == "/Examples"){
-            munes.Examples=true;
-          }
+         if (Activeurl == "/Examples") {
+             munes.Examples = true;
+         }
 
-         if(Activeurl == "/disk"){
-            munes.disk=true;
-          }
+         if (Activeurl == "/disk") {
+             munes.disk = true;
+         }
 
-          return munes
-    }
+         return munes
+     }
 
  }]);
 
-//反馈窗口控制器
- ecsapp.controller("feedbcakctrl",["$scope",function($scope){
+ //反馈窗口控制器
+ ecsapp.controller("feedbcakctrl", ["$scope", function($scope) {
 
- 	 $scope.feedback = {
+     $scope.feedback = {
          email: "",
          content: ""
      }
@@ -132,10 +163,10 @@
          }
      }
 
-    //打开反馈窗口
-     $scope.formPanel=false;
-     $scope.feedbcak=function(){
-         $scope.formPanel=!$scope.formPanel; 
+     //打开反馈窗口
+     $scope.formPanel = false;
+     $scope.feedbcak = function() {
+         $scope.formPanel = !$scope.formPanel;
      }
 
  }]);

@@ -30,10 +30,10 @@
                             <div class="topbar-product-nav topbar-left">
                                 <div class="topbar-product-nav-inner topbar-nav-buoy-wrap">
                                     <ul class="topbar-product-nav-list">
-                                        <li class="active">
+                                        <li ng-class="{'active':product.item1}" ng-mouseover="showproduct(1)">
                                             <span>全部</span>
                                         </li>
-                                        <li>
+                                        <li ng-mouseover="showproduct(2)" ng-class="{'active':product.item2}">
                                             <span>云计算基础服务</span>
                                         </li>
                                     </ul>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="topbar-product-content topbar-product-category-wrap">
                                 <!-- 全部 -->
-                                <div class="topbar-product-category topbar-product-all topbar-clearfix" style="display: block;">
+                                <div class="topbar-product-category topbar-product-all topbar-clearfix" ng-show="product.item1">
                                     <div class="topbar-product-all-item topbar-left">
                                         <!--遍历ul-->
                                         <ul class="topbar-product-all-list topbar-left">
@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                                 <!--遍历如下div-->
-                                <div class="topbar-product-category" style="display: none;">
+                                <div class="topbar-product-category" ng-show="product.item2">
                                     <!-- 拥有二级分类 -->
                                     <div style="overflow: hidden;">
                                         <div class="topbar-product-nav topbar-left" style="padding: 0">
@@ -91,6 +91,11 @@
                     </div>
                 </div>
                 <div class="topbar-info topbar-right topbar-clearfix">
+                   <div class="topbar-left">
+                       <a href="https://github.com/gaowenzhen/ecs.aliyun.com" class="topbar-btn topbar-hover-dark">
+                            <span class="icon-lvwang"></span>&nbsp;&nbsp;<span>下载源码</span>
+                        </a> 
+                   </div>
                     <div class="topbar-search topbar-left topbar-info-dropdown">
                         <a href="#" class="topbar-btn topbar-hover-dark">
                             <span class="icon-search"></span><span>搜索</span>
@@ -104,7 +109,7 @@
                     <div class="dropdown topbar-notice topbar-left topbar-info-dropdown topbar-info-item">
                         <a href="#" class="topbar-btn topbar-btn-notice topbar-hover-dark">
                             <span class="topbar-btn-notice-icon icon-bell"></span>
-                            <span class="topbar-btn-notice-num" ng-class="{'topbar-btn-notice-num-zero':data.messages.total == 0}">80</span>
+                            <span class="topbar-btn-notice-num">80</span>
                         </a>
                         <div class="topbar-notice-panel topbar-info-dropdown-memu">
                             <div class="topbar-notice-arrow"></div>
@@ -115,7 +120,7 @@
                             <div class="topbar-notice-body">
                                 <ul>
                                     <li>
-                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                        <a target="_blank" class="clearfix" href="#">
                                             <span class="inline-block">
                     <span class="topbar-notice-link">您对阿里云服务器还满意吗？期待您参与！</span>
                                             <span class="topbar-notice-time">2017-01-19 15:20</span>
@@ -126,7 +131,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                        <a target="_blank" class="clearfix" href="#">
                                             <span class="inline-block">
                     <span class="topbar-notice-link">苹果ATS标准将于1月1日强制执行！如何快速实现网站HTTPS化？</span>
                                             <span class="topbar-notice-time">2016-12-21 15:41</span>
@@ -137,7 +142,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                        <a target="_blank" class="clearfix" href="#">
                                             <span class="inline-block">
                     <span class="topbar-notice-link">[会员尊享]：云数据库限时优惠，月付7折，年付6折，不限配置，不限台数！</span>
                                             <span class="topbar-notice-time">2016-12-09 11:54</span>
