@@ -1,0 +1,57 @@
+<!--右边体.中间菜单-->
+<div class="viewFramework-product-navbar">
+    <div class="product-nav-stage" ng-show="navScene" ng-class="{'product-nav-stage-main':navScene=='main','product-nav-stage-sub':navScene=='sub'}">
+        <div class="product-nav-scene product-nav-main-scene">
+            <div class="product-nav-title">云服务器 ECS</div>
+            <div class="ng-isolate-scope"></div>
+            <div class="product-nav-list">
+                <ul role="tree">
+                    <li ng-class="{'active':checkActive().Overview}">
+                        <div class="ng-isolate-scope">
+                            <a ui-sref="home.Overview" role="treeitem">
+                                <div class="nav-icon"></div>
+                                <div>概览</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li ng-class="{'active':checkActive().Examples}">
+                        <div class="ng-isolate-scope">
+                            <a ui-sref="home.Examples" role="treeitem">
+                                <div class="nav-icon"></div>
+                                <div class="nav-title">实例</div>
+                            </a>
+                    </li>
+                    <li ng-class="{'active':checkActive().disk}">
+                        <div class="ng-isolate-scope">
+                            <a ui-sref="home.disk" role="treeitem">
+                                <div class="nav-icon"></div>
+                                <div class="nav-title">磁盘</div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <div class="product-nav-scene product-nav-sub-scene">
+                <div class="product-nav-title">
+                </div>
+                <div class="product-nav-list">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边体.中间按钮-->
+    <div class="viewFramework-product-navbar-collapse" ng-click="collapseProductNavbar()">
+        <div class="product-navbar-collapse-inner">
+            <div class="product-navbar-collapse-bg"></div>
+            <div class="product-navbar-collapse"><span class="icon-collapse-left"></span> <span class="icon-collapse-right"></span></div>
+        </div>
+    </div>
+    <!--右边体.右边容器-->
+    <div class="viewFramework-product-body"><a tabindex="0" href="javascript:void(0)" id="viewFramework-product-anchor" role="landmark" style="position: absolute;top: -10000px;left: -10000px">let's go</a>
+        <div>
+            <!-- product body -->
+            <div ui-view="" class="console-container"></div>
+            <!-- /product body -->
+        </div>
+    </div>

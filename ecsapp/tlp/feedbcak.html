@@ -1,0 +1,17 @@
+<div class="feedback-trigger" ng-click="feedbcak();"><span class="feedback-trigger-text">打开反馈</span> <span class="feedback-trigger-icon"><i class="icon-feedback"></i></span></div>
+<div class="feedback" ng-if="formPanel">
+    <div class="feedback-panel">
+        <div class="feedback-title">
+            <h1>控制台意见反馈</h1><span ng-click="feedbcak()" class="feedback-close"><i class="icon-no"></i></span></div>
+        <div class="feedback-content">
+            <h2><span class="must">*</span> 反馈内容（必填）</h2>
+            <textarea ng-model="feedback.content" placeholder="只是个前端皮肤，服务端还没开发，您提交不了。" class="ng-pristine ng-valid"></textarea>
+            <div class="feedback-content-count"><span>还可以输入<span ng-bind="textlens.length"></span>个字符</span> <span ng-show="!checkContent()" style="color:red">已经超过<span ng-bind="feedback.content.length - 400"></span></span>
+            </div>
+        </div>
+        <div class="feedback-contact">
+            <h2>联系邮箱</h2>
+            <input placeholder="请留下您的联系邮箱，以便我们及时回复您" ng-model="feedback.email" ng-change="checkEmail()" class="ng-pristine ng-valid"> <span ng-show="emailError" class="inputError ng-hide">邮箱格式有误，可能无法回复您</span></div>
+        <div class="feedback-footer"><a class="submit-btn disabled" ng-show="!(feedback.content &amp;&amp; 400-feedback.content.length > 0)">提交</a> <a class="submit-btn ng-hide" ng-show="feedback.content &amp;&amp; 400-feedback.content.length > 0" href="javascript:;">提交</a></div>
+    </div>
+</div>

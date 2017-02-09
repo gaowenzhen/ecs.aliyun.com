@@ -15,16 +15,18 @@
     <link rel="stylesheet" type="text/css"
           href="console/styles/angular-growl.min.css">
     <link rel="stylesheet" type="text/css" href="console/styles/console1412.css">
-    <link rel="stylesheet" type="text/css"
-          href="console/styles/home.console.css">
+   
+ <script type="text/javascript" src="angular/angular.min.js"></script>
+<script type="text/javascript" src="angular/angular-ui-router.min.js"></script>
 </head>
-<body>
+<body ng-app="ecsapp">
 
 <div view-framework>
     <div ui-view></div>
 </div>
-<div data-ng-controller="aliyunCommonController"></div>
-<div growl></div>
 
+<div ng-include="'ecsapp/tlp/rootwin.html'"></div> 
+
+<script type="text/javascript" src="ecsapp/main.js"></script>
 </body>
 </html>

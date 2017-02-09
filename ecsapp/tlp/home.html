@@ -1,0 +1,244 @@
+<div class="viewFramework-topbar" role="heading">
+    <div>
+        <div class="console-component-topbar" role="menubar">
+            <div class="topbar-wrap topbar-clearfix" style="display: block;">
+                <div class="topbar-head topbar-left">
+                    <!-- 阿里云官网链接 -->
+                    <a href="#" title="#" target="_blank" class="topbar-btn topbar-logo topbar-left" aliyun-console-spm="1" data-spm-click="gostr=/aliyun;locaid=d1;;">
+                        <span class="icon-logo-new"></span>
+                    </a>
+                    <!-- 阿里云控制台首页链接 -->
+                    <a href="#" target="_self" class="topbar-home-link topbar-btn topbar-left">
+                        <span>管理控制台</span>
+                    </a>
+                </div>
+                <!-- 阿里云产品与服务 -->
+                <div class="topbar-product topbar-left" ng-class="{'open':isProductOpen}">
+                    <div ng-click="toggleProductDropdown($event)" class="topbar-btn topbar-product-btn">
+                        <span>产品与服务</span><span class="icon-arrow-down"></span>
+                    </div>
+                    <div class="topbar-product-dropdown" ng-class="{'topbar-show':isProductOpen}">
+                        <div class="topbar-product-container topbar-clearfix">
+                            <div class="topbar-product-history topbar-left">
+                                <div class="topbar-product-title">最近访问</div>
+                                <ul class="topbar-product-history-list">
+                                    <li>
+                                        <a target="_self" href="#">云服务器 ECS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="topbar-product-nav topbar-left">
+                                <div class="topbar-product-nav-inner topbar-nav-buoy-wrap">
+                                    <ul class="topbar-product-nav-list">
+                                        <li class="active">
+                                            <span>全部</span>
+                                        </li>
+                                        <li>
+                                            <span>云计算基础服务</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="topbar-product-content topbar-product-category-wrap">
+                                <!-- 全部 -->
+                                <div class="topbar-product-category topbar-product-all topbar-clearfix" style="display: block;">
+                                    <div class="topbar-product-all-item topbar-left">
+                                        <!--遍历ul-->
+                                        <ul class="topbar-product-all-list topbar-left">
+                                            <!--遍历li-->
+                                            <li class="topbar-product-all-char">
+                                                <span>A</span>
+                                            </li>
+                                            <li>
+                                                <a class="topbar-transition" target="_self" href="#">安全管家</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--遍历如下div-->
+                                <div class="topbar-product-category" style="display: none;">
+                                    <!-- 拥有二级分类 -->
+                                    <div style="overflow: hidden;">
+                                        <div class="topbar-product-nav topbar-left" style="padding: 0">
+                                            <div class="topbar-product-nav-inner topbar-product-nav-inner-sub topbar-nav-buoy-wrap">
+                                                <ul class="topbar-product-nav-list">
+                                                    <li class="active">
+                                                        <span>弹性计算</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>数据库</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="topbar-product-category-wrap">
+                                            <div class="topbar-product-category" style="padding-top: 0px; display: block;">
+                                                <ul class="topbar-product-category-col topbar-left">
+                                                    <li>
+                                                        <a target="_self" class="product-item topbar-transition" href="#">
+                                                            <div class="product-name">云服务器 ECS</div>
+                                                            <div class="product-description">可弹性伸缩、安全稳定、简单易用的计算服务</div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topbar-product-close" ng-click="toggleProductDropdown($event)"><span class="icon-arrow-up"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="topbar-info topbar-right topbar-clearfix">
+                    <div class="topbar-search topbar-left topbar-info-dropdown">
+                        <a href="#" class="topbar-btn topbar-hover-dark">
+                            <span class="icon-search"></span><span>搜索</span>
+                        </a>
+                        <div class="topbar-search-dropdown topbar-info-dropdown-memu">
+                            <input class="topbar-search-ask ng-pristine ng-valid" type="text" name="input" ng-model="askInput" autocomplete="off" placeholder="搜索">
+                            <a target="_blank" class="topbar-search-mark icon-enter" ng-click="searchClickHandler($event)" href="#"></a>
+                        </div>
+                    </div>
+                    <!-- 站内信 -->
+                    <div class="dropdown topbar-notice topbar-left topbar-info-dropdown topbar-info-item">
+                        <a href="#" class="topbar-btn topbar-btn-notice topbar-hover-dark">
+                            <span class="topbar-btn-notice-icon icon-bell"></span>
+                            <span class="topbar-btn-notice-num" ng-class="{'topbar-btn-notice-num-zero':data.messages.total == 0}">80</span>
+                        </a>
+                        <div class="topbar-notice-panel topbar-info-dropdown-memu">
+                            <div class="topbar-notice-arrow"></div>
+                            <div class="topbar-notice-head">
+                                <span>站内消息通知</span>
+                                <a href="#" class="pull-right" style="font-size: 13px;" data-spm-click="gostr=/aliyun;locaid=d41;;">消息接收管理</a>
+                            </div>
+                            <div class="topbar-notice-body">
+                                <ul>
+                                    <li>
+                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                            <span class="inline-block">
+                    <span class="topbar-notice-link">您对阿里云服务器还满意吗？期待您参与！</span>
+                                            <span class="topbar-notice-time">2017-01-19 15:20</span>
+                                            </span>
+                                            <span class="topbar-notice-class">
+                    <span class="topbar-notice-class-name">问卷回访</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                            <span class="inline-block">
+                    <span class="topbar-notice-link">苹果ATS标准将于1月1日强制执行！如何快速实现网站HTTPS化？</span>
+                                            <span class="topbar-notice-time">2016-12-21 15:41</span>
+                                            </span>
+                                            <span class="topbar-notice-class">
+                    <span class="topbar-notice-class-name">安全与管理</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" class="clearfix" ng-click="readMessage(item)" href="#">
+                                            <span class="inline-block">
+                    <span class="topbar-notice-link">[会员尊享]：云数据库限时优惠，月付7折，年付6折，不限配置，不限台数！</span>
+                                            <span class="topbar-notice-time">2016-12-09 11:54</span>
+                                            </span><span class="topbar-notice-class">
+                    <span class="topbar-notice-class-name">优惠活动</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="topbar-notice-foot">
+                                <a class="topbar-notice-more" target="_blank" href="#">查看更多</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 费用 -->
+                    <div class="topbar-left topbar-info-item topbar-info-dropdown">
+                        <a href="#" target="_blank" class="topbar-btn topbar-info-dropdown-toggle">
+                            <span>费用</span>
+                        </a>
+                        <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list">
+                            <li class="topbar-info-btn">
+                                <!-- ngIf: link.section -->
+                                <a href="#" target="_blank">
+                                    <span>充值</span>
+                                </a>
+                            </li>
+                            <li class="topbar-info-btn">
+                                <a href="#" target="_blank">
+                                    <span>续费管理</span>
+                                </a>
+                            </li>
+                            <li class="topbar-info-btn">
+                                <span class="topbar-info-btn-gap"></span>
+                                <a href="#" target="_blank">
+                                    <span>进入费用中心</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 工单 -->
+                    <div class="topbar-left topbar-info-item topbar-info-dropdown">
+                        <a href="#" target="_blank" class="topbar-btn topbar-info-dropdown-toggle">
+                            <span>工单</span>
+                        </a>
+                        <ul class="topbar-info-dropdown-memu topbar-info-dropdown-memu-list">
+                            <li class="topbar-info-btn">
+                                <a href="#" target="_blank">
+                                    <span>我的工单</span>
+                                </a>
+                            </li>
+                            <li class="topbar-info-btn">
+                                <a href="#" target="_blank">
+                                    <span>提交工单</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topbar-left topbar-user">
+                        <div class="topbar-info-dropdown topbar-info-item">
+                            <a href="#" target="_blank" class="topbar-info-dropdown-toggle topbar-btn">
+                                <span title="gaowenzhen@msn.com">gaowenzhen@msn.com</span>
+                            </a>
+                            <div class="topbar-info-dropdown-memu topbar-align-right">
+                                <div class="topbar-user-entrance-list">
+                                    <!-- ngRepeat: link in data.navLinks.user.links -->
+                                    <a class="topbar-user-entrance" href="#" target="_target">
+                                        <span class="topbar-user-entrance-logo icon-topbar-user-info"></span>
+                                        <span>基本资料</span>
+                                    </a>
+                                    <a class="topbar-user-entrance" href="#" target="_target">
+                                        <span class="topbar-user-entrance-logo icon-topbar-certify"></span>
+                                        <span>实名认证</span>
+                                    </a>
+                                    <a class="topbar-user-entrance" href="#" target="_target">
+                                        <span class="topbar-user-entrance-logo icon-account"></span>
+                                        <span>会员中心</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="user-btn-list">
+                                        <a class="user-btn-link" href="#" target="_self"><span>退出管理控制台</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--viewFramework-body 开始 -->
+<div class="viewFramework-body" ng-class="{'viewFramework-sidebar-full':!isSidebarFold,'viewFramework-sidebar-mini':isSidebarFold}">
+    <!--左边菜单 -->
+    <div role="navigation" class="viewFramework-sidebar" ng-include="'ecsapp/tlp/sidebar.html'"></div>
+    <!--右边体 -->
+    <div ng-class="{'viewFramework-product-col-1':productNavBar}" role="main" class="viewFramework-product" ng-include="'ecsapp/tlp/product.html'"></div>
+</div>
+<!--viewFramework-body结束 -->
+
+<!--弹出栏目配置-->
+

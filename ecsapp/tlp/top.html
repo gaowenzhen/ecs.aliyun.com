@@ -22,352 +22,56 @@
             <ul class="topbar-product-history-list">
               <!-- ngRepeat: productId in data.recentProductList --><!-- ngIf: data.products[productId] && data.products[productId].name --><li ng-repeat="productId in data.recentProductList" ng-if="data.products[productId] &amp;&amp; data.products[productId].name" class="ng-scope">
                 <a ng-href="https://yundun.console.aliyun.com/?p=sas" target="_self" class="ng-binding" href="https://yundun.console.aliyun.com/?p=sas">态势感知</a>
-              </li><!-- end ngIf: data.products[productId] && data.products[productId].name --><!-- end ngRepeat: productId in data.recentProductList -->
+              </li>
             </ul>
-          </div><!-- end ngIf: data.recentProductList && data.recentProductList.length > 0 -->
+          </div>
           <div class="topbar-product-nav topbar-left">
             <div class="topbar-product-nav-inner topbar-nav-buoy-wrap">
               <ul class="topbar-product-nav-list">
-                <!-- ngRepeat: category in data.categories --><!-- ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><li ng-repeat="category in data.categories" ng-if="!category.hide &amp;&amp; ((category.products &amp;&amp; category.products.length > 0) || (category.categories &amp;&amp; category.categories.length > 0) || category.fixed)" ng-hide="category.id == 'all' &amp;&amp; !data.navLinks.product.showAll" data-index="0" class="ng-scope active">
-                  <span ng-bind="category.name" class="ng-binding">全部</span>
-                </li><!-- end ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><!-- end ngRepeat: category in data.categories --><!-- ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><li ng-repeat="category in data.categories" ng-if="!category.hide &amp;&amp; ((category.products &amp;&amp; category.products.length > 0) || (category.categories &amp;&amp; category.categories.length > 0) || category.fixed)" ng-hide="category.id == 'all' &amp;&amp; !data.navLinks.product.showAll" data-index="1" class="ng-scope">
-                  <span ng-bind="category.name" class="ng-binding">云计算基础服务</span>
-                </li><!-- end ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><!-- end ngRepeat: category in data.categories --><!-- ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><li ng-repeat="category in data.categories" ng-if="!category.hide &amp;&amp; ((category.products &amp;&amp; category.products.length > 0) || (category.categories &amp;&amp; category.categories.length > 0) || category.fixed)" ng-hide="category.id == 'all' &amp;&amp; !data.navLinks.product.showAll" data-index="2" class="ng-scope">
-                  <span ng-bind="category.name" class="ng-binding">大数据（数加）</span>
-                </li><!-- end ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><!-- end ngRepeat: category in data.categories --><!-- ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><li ng-repeat="category in data.categories" ng-if="!category.hide &amp;&amp; ((category.products &amp;&amp; category.products.length > 0) || (category.categories &amp;&amp; category.categories.length > 0) || category.fixed)" ng-hide="category.id == 'all' &amp;&amp; !data.navLinks.product.showAll" data-index="3" class="ng-scope">
-                  <span ng-bind="category.name" class="ng-binding">安全（云盾）</span>
-                </li><!-- end ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><!-- end ngRepeat: category in data.categories --><!-- ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><li ng-repeat="category in data.categories" ng-if="!category.hide &amp;&amp; ((category.products &amp;&amp; category.products.length > 0) || (category.categories &amp;&amp; category.categories.length > 0) || category.fixed)" ng-hide="category.id == 'all' &amp;&amp; !data.navLinks.product.showAll" data-index="4" class="ng-scope">
-                  <span ng-bind="category.name" class="ng-binding">域名与网站（万网）</span>
-                </li><!-- end ngIf: !category.hide && ((category.products && category.products.length > 0) || (category.categories && category.categories.length > 0) || category.fixed) --><!-- end ngRepeat: category in data.categories -->
+              <li>
+                  <span>全部</span>
+                </li>
+                <li>
+                  <span>云计算基础服务</span>
+                </li>
+                <li>
+                  <span>大数据（数加）</span>
+                </li><li>
+                  <span>安全（云盾）</span>
+                </li><li>
+                  <span>域名与网站（万网）</span>
+                </li>
               </ul>
             </div>
           </div>
           <div class="topbar-product-content topbar-product-category-wrap">
             <!-- 全部 -->
-            <!-- ngIf: data.navLinks.product.showAll --><div class="topbar-product-category topbar-product-all topbar-clearfix ng-scope" ng-if="data.navLinks.product.showAll" ng-show="data.categoryIndex.main == 0" style="display: block;">
+            <div class="topbar-product-category topbar-product-all topbar-clearfix" style="display: block;">
               <div class="topbar-product-all-item topbar-left">
-                <!-- ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">A</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=mss" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=mss">安全管家</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://apigateway.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://apigateway.console.aliyun.com">API网关</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">B</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/website/list" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/website/list">标准建站</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ots.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ots.console.aliyun.com">表格存储</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">C</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dpc.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dpc.console.aliyun.com">采云间</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://actiontrail.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://actiontrail.console.aliyun.com">操作审计</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://cdn.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://cdn.console.aliyun.com">CDN</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">D</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://odps.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://odps.console.aliyun.com">大数据计算服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://workbench.shuju.aliyun.com/console" class="topbar-transition ng-scope ng-binding" target="_self" href="https://workbench.shuju.aliyun.com/console">大数据开发套件</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://sms.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://sms.console.aliyun.com">短信服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://oss.console.aliyun.com/index" class="topbar-transition ng-scope ng-binding" target="_self" href="https://oss.console.aliyun.com/index">对象存储 OSS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://datav.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://datav.aliyun.com">DataV数据可视化</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=ddos" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=ddos">DDoS防护</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">E</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://emr.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://emr.console.aliyun.com">E-MapReduce</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">F</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ram.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ram.console.aliyun.com">访问控制</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://drds.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://drds.console.aliyun.com">分布式关系型数据库 DRDS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ads.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ads.console.aliyun.com">分析型数据库</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=aqs" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=aqs">服务器安全（安骑士）</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://slbnew.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://slbnew.console.aliyun.com">负载均衡</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">G</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://vpc.console.aliyun.com/expressConnect" class="topbar-transition ng-scope ng-binding" target="_self" href="https://vpc.console.aliyun.com/expressConnect">高速通道</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://hpc.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://hpc.console.aliyun.com">高性能计算</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://prophet.data.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://prophet.data.aliyun.com">公众趋势分析</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://oas.console.aliyun.com/console/index" class="topbar-transition ng-scope ng-binding" target="_self" href="https://oas.console.aliyun.com/console/index">归档存储</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">H</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=sppc" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=sppc">合作伙伴产品中心</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dtboost.shuju.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dtboost.shuju.aliyun.com">画像分析</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/domain/httpdns" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/domain/httpdns">HTTPDNS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">J</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://data.aliyun.com/console/learn" class="topbar-transition ng-scope ng-binding" target="_self" href="https://data.aliyun.com/console/learn">机器学习</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=hsm" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=hsm">加密服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">K</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://opensearch.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://opensearch.console.aliyun.com">开放搜索</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">L</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://stream.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://stream.console.aliyun.com">流计算</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=cts" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=cts">绿网</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">M</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://mts.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://mts.console.aliyun.com">媒体转码</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://kms.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://kms.console.aliyun.com">密钥管理服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">P</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://batchcompute.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://batchcompute.console.aliyun.com">批量计算</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://petadata.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://petadata.console.aliyun.com">PB 级云数据库 PetaData</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">Q</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://edas.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://edas.console.aliyun.com">企业级分布式应用服务 EDAS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ei.data.aliyun.com/console" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ei.data.aliyun.com/console">企业图谱</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/mail/list" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/mail/list">企业邮箱</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://das.base.shuju.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://das.base.shuju.aliyun.com">Quick BI</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">R</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://sls.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://sls.console.aliyun.com">日志服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://cs.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://cs.console.aliyun.com">容器服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">S</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://vod.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://vod.console.aliyun.com">视频点播</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://live.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://live.console.aliyun.com">视频直播</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dts.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dts.console.aliyun.com">数据传输服务DTS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=afs" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=afs">数据风控</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dms.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dms.console.aliyun.com">数据管理</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://cdp.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://cdp.console.aliyun.com">数据集成</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">T</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ews.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ews.console.aliyun.com">弹性 Web 托管</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ip.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ip.console.aliyun.com">弹性公网 IP</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://essnew.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://essnew.console.aliyun.com">弹性伸缩</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=sas" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=sas">态势感知</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dtboost.aliyun.com/re" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dtboost.aliyun.com/re">推荐引擎</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">W</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://nas.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://nas.console.aliyun.com">文件存储</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://iot.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://iot.console.aliyun.com">物联网套件</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=waf" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=waf">Web应用防火墙</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">X</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=xz" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=xz">先知（安全情报）</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ons.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ons.console.aliyun.com">消息队列</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://mns.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://mns.console.aliyun.com">消息服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://pts.aliyun.com/aliyun" class="topbar-transition ng-scope ng-binding" target="_self" href="https://pts.aliyun.com/aliyun">性能测试服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">Y</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://arms.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://arms.console.aliyun.com">业务实时监控服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=jaq" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=jaq">移动安全</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://man.console.aliyun.com/aliyun/masAppList.htm?login=true" class="topbar-transition ng-scope ng-binding" target="_self" href="https://man.console.aliyun.com/aliyun/masAppList.htm?login=true">移动数据分析</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://push.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://push.console.aliyun.com">移动推送</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://dm.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://dm.console.aliyun.com">邮件推送</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/domain/list" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/domain/list">域名</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ecs.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ecs.console.aliyun.com">云服务器 ECS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://csb.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://csb.console.aliyun.com">云服务总线</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://cms.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://cms.console.aliyun.com">云监控</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/domain/tclist" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/domain/tclist">云解析 DNS</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://market.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://market.console.aliyun.com">云市场</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList --><ul class="topbar-product-all-list topbar-left ng-scope" ng-repeat="col in data.productList">
-                  <!-- ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://gpdb.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://gpdb.console.aliyun.com">云数据库 HybridDB</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ocsnew.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ocsnew.console.aliyun.com">云数据库 Memcache 版</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://mongodb.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://mongodb.console.aliyun.com">云数据库 MongoDB 版</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://oceanbase.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://oceanbase.console.aliyun.com">云数据库 OceanBase</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://rdsnew.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://rdsnew.console.aliyun.com">云数据库 RDS 版</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://kvstore.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://kvstore.console.aliyun.com">云数据库 Redis 版</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://netcn.console.aliyun.com/core/host/list2" class="topbar-transition ng-scope ng-binding" target="_self" href="https://netcn.console.aliyun.com/core/host/list2">云虚拟主机</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope topbar-product-all-char">
-                    <!-- ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' --><span ng-if="product.type == 'charId'" class="ng-scope ng-binding">Z</span><!-- end ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://yundun.console.aliyun.com/?p=cas" class="topbar-transition ng-scope ng-binding" target="_self" href="https://yundun.console.aliyun.com/?p=cas">证书服务</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://help.aliyun.com/product/30413.html" class="topbar-transition ng-scope ng-binding" target="_self" href="https://help.aliyun.com/product/30413.html">智能语音交互</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://vpc.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://vpc.console.aliyun.com">专有网络 VPC</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index --><li ng-repeat="product in col track by $index" ng-class="{'topbar-product-all-char':product.type == 'charId'}" class="ng-scope">
-                    <!-- ngIf: !product.type --><a ng-if="!product.type" ng-href="https://ros.console.aliyun.com" class="topbar-transition ng-scope ng-binding" target="_self" href="https://ros.console.aliyun.com">资源编排</a><!-- end ngIf: !product.type -->
-                    <!-- ngIf: product.type == 'charId' -->
-                  </li><!-- end ngRepeat: product in col track by $index -->
-                </ul><!-- end ngRepeat: col in data.productList -->
+                <ul class="topbar-product-all-list topbar-left">
+                <li>
+                <span>A</span>
+                  </li>
+                  <li><a ng-href="#" class="topbar-transition" target="_self" href="#">安全管家</a>
+                  </li><li>
+                  <a class="topbar-transition" target="_self" href="#">API网关</a>
+                  </li><li class="topbar-product-all-char">
+                  <span>B</span>
+                  </li>
+                  <li><a class="topbar-transition" target="_self" href="#">标准建站</a></li>
+                </ul>
+                <ul class="topbar-product-all-list topbar-left">
+                  <li>
+                    <a class="topbar-transition" target="_self" href="#">E-MapReduce</a>
+                  </li><li class="topbar-product-all-char">
+                  <span>F</span>
+                  </li><li>
+                  <a class="topbar-transition" target="_self" href="#">访问控制</a>
+                  </li>
+                </ul>                
               </div>
-            </div><!-- end ngIf: data.navLinks.product.showAll -->
-            <!-- ngRepeat: item in data.categories --><!-- ngIf: item && item.id != 'all' --><!-- end ngRepeat: item in data.categories --><!-- ngIf: item && item.id != 'all' --><div class="topbar-product-category ng-scope" ng-repeat="item in data.categories" ng-if="item &amp;&amp; item.id != 'all'" style="display: none;">
+            </div>
+            <div class="topbar-product-category" style="display: none;">
               <!-- 拥有二级分类 -->
               <!-- ngIf: item.categories && item.categories.length > 0 --><div ng-if="item.categories &amp;&amp; item.categories.length > 0" style="overflow: hidden;" class="ng-scope">
                 <div class="topbar-product-nav topbar-left" style="padding: 0">

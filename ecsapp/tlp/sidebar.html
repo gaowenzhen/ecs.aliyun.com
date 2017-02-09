@@ -1,0 +1,115 @@
+<div class="sidebar-content console-component-sidebar">
+    <div>
+        <div class="sidebar-inner">
+            <div class="sidebar-fold" ng-class="{'icon-unfold': !isSidebarFold,'icon-fold':isSidebarFold}" ng-click="toggleSidebarStatus()"></div>
+            <div class="sidebar-nav" ng-class="{'sidebar-nav-active':1 == categoryUnfoldIndex}">
+                <div class="sidebar-title sidebar-trans" ng-click="titleClickHandler(1)">
+                    <div class="sidebar-title-inner">
+                        <span class="sidebar-title-icon icon-arrow-right"></span>
+                        <span class="sidebar-title-text ng-binding">云计算基础服务</span>
+                        <span class="sidebar-manage">
+            <a class="icon-setup" ng-click="manageClickHandler($event)"></a>
+          </span>
+                    </div>
+                </div>
+                <ul class="sidebar-trans" ng-style="{'max-height':1 == categoryUnfoldIndex? categoryHeight: 0}">
+                    <li class="nav-item active">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans">
+                                <span class="icon-ecs"></span>
+                            </div>
+                            <span class="nav-title">云服务器 ECS&nbsp;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-nav" ng-class="{'sidebar-nav-active':2 == categoryUnfoldIndex}">
+                <div class="sidebar-title sidebar-trans" ng-click="titleClickHandler(2)">
+                    <div class="sidebar-title-inner">
+                        <span class="sidebar-title-icon icon-arrow-right"></span>
+                        <span class="sidebar-title-text">大数据（数加）</span>
+                        <span class="sidebar-manage ng-hide">
+            <a class="icon-setup" ng-click="manageClickHandler($event)"></a>
+          </span>
+                    </div>
+                </div>
+                <ul class="sidebar-trans" ng-style="{'max-height':2 == categoryUnfoldIndex? categoryHeight: 0}" style="max-height: 0px;">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans" style=" font-size: 12px;">
+                                <span class="icon-circle"></span>
+                            </div>
+                            <span class="nav-title">数加控制台概览</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans">
+                                <span class="icon-dide icon-logo-new"></span>
+                            </div>
+                            <span class="nav-title ng-binding">大数据开发套件&nbsp;</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans">
+                                <span class="icon-quickbi icon-logo-new"></span>
+                            </div>
+                            <span class="nav-title ng-binding">Quick BI&nbsp;</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans">
+                                <span class="icon-pai icon-logo-new"></span>
+                            </div>
+                            <span class="nav-title">机器学习&nbsp;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-nav" ng-class="{'sidebar-nav-active':3 == categoryUnfoldIndex}">
+                <div class="sidebar-title sidebar-trans" ng-click="titleClickHandler(3)">
+                    <div class="sidebar-title-inner">
+                        <span class="sidebar-title-icon icon-arrow-right"></span>
+                        <span class="sidebar-title-text">安全（云盾）</span>
+                        <span class="sidebar-manage ng-hide">
+            <a class="icon-setup" ng-click="manageClickHandler($event)"></a>
+          </span>
+                    </div>
+                </div>
+                <ul class="sidebar-trans" ng-style="{'max-height':3 == categoryUnfoldIndex? categoryHeight: 0}" style="max-height: 0px;">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans" style=" font-size: 12px;">
+                                <span class="icon-circle"></span>
+                            </div>
+                            <span class="nav-title ng-binding">云盾控制台概览</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-nav" ng-class="{'sidebar-nav-active':4 == categoryUnfoldIndex}">
+                <div class="sidebar-title sidebar-trans" ng-click="titleClickHandler(4)">
+                    <div class="sidebar-title-inner">
+                        <span class="sidebar-title-icon icon-arrow-right"></span>
+                        <span class="sidebar-title-text">域名与网站（万网）</span>
+                        <span class="sidebar-manage ng-hide">
+            <a class="icon-setup" ng-click="manageClickHandler($event)"></a>
+          </span>
+                    </div>
+                </div>
+                <ul class="sidebar-trans" ng-style="{'max-height':4 == categoryUnfoldIndex? categoryHeight: 0}" style="max-height: 0px;">
+                    <li class="nav-item">
+                        <a href="#" class="sidebar-trans">
+                            <div class="nav-icon sidebar-trans">
+                                <span class="icon-yuming"></span>
+                            </div>
+                            <span class="nav-title">域名&nbsp;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
